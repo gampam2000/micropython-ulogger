@@ -4,7 +4,7 @@ except: import utime as time
 try:    from micropython import const
 except: const = lambda x:x # for debug
 
-from io import TextIOWrapper
+from io import StringIO
 
 __version__ = "v1.2"
 
@@ -78,7 +78,7 @@ class Handler():
     _color: bool
     _file_name: str
     _max_size: int
-    _file = TextIOWrapper
+    _file = StringIO
 
     def __init__(self,
         level: int = INFO,
